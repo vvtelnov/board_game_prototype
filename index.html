@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Настольная игра</title>
+  </head>
+  <body class="page">
+    <div class="play-space"></div>
+		<div class="movable-space"></div>
+  </body>
+
+  <div id="popup" class="popup popup_opened">
+		
+		<div class="popup__container">
+			<span class="popup_oneclick-joke">Ты в своем уме !? Нахера тебе ее закрывать? Ты здесь все параметры должен вводить! EЩЕ ПОПРОБУЙ ПОТЫКАТЬ НА НЕЕ!!!</span>
+			<span class="popup_dblclick-joke">Она не работает блять, хули жмешь!</span>
+			<button type="button" class="popup__close-button"><img src="./images/close-icon.svg" alt="X"></button>
+			<h2 class="popup__title">Внести стартовые параметры</h2>
+			<form name="edit-profile" class="popup__form">
+				<fieldset class="popup__edit-form-container">
+
+						<input name="rows" required placeholder="Количество рядов клеток" id="rows" type="text" class="popup__text-input-form" value="">
+						<input name="columns" required placeholder="Количество колонок клеток" id="columns" type="text" class="popup__text-input-form" value="">
+						<input name="blockCells" placeholder="Номера НЕ игровых клеток (через пробел)" id="block-cells" type="text" class="popup__text-input-form" value="">
+						<input name="numbPlayChar" placeholder="Количество игровых персонажей" id="numb-play-char" type="text" class="popup__text-input-form" value="">
+						<input name="numbEnemy" placeholder="Количество врагов" id="numb-enemy" type="text" class="popup__text-input-form" value="">
+						<input name="numbSpecialEnemy" placeholder="Количество особых врагов" id="numb-special-enemy" type="text" class="popup__text-input-form" value="">
+					
+					<button name="profile-save-button" type="submit" class="popup__save-button">Сохранить</button>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+
+  <div id="popup" class="popup popup__context-menu">
+		<form name="reposition-element" class="popup__context-menu-form-container">
+			<input name="repesition" placeholder="Номер клетки, куда переместить пресонажа" id="repesition" type="number" class="popup__text-input-form popup__repositin-input" value="">
+			<button name="delete-elem-button" type="button" class="delete-elem-button">Удалить персонажа</button>
+		</form>
+	</div>
+
+
+	<script src="initialParametrs.js"></script>  
+	<script src="joke.js"></script>
+	<script src="index.js"></script>
+	<script src="characters.js"></script>
+</html>
