@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/index.css">
+    <title>Настольная игра</title>
+  </head>
+		<body class="page">
+			<div class="play-space"></div>
+			<div class="dead-char-space"></div>
+
+			<div id="popup-init-form" class="popup popup_opened">
+			
+				<div class="popup__container">
+					<span class="popup_oneclick-joke">Ты в своем уме !? Нахера тебе ее закрывать? Ты здесь все параметры должен вводить! EЩЕ ПОПРОБУЙ ПОТЫКАТЬ НА НЕЕ!!!</span>
+					<span class="popup_dblclick-joke">Она не работает блять, хули жмешь!</span>
+					<button type="button" class="popup__close-button"><img src="./images/close-icon.svg" alt="X"></button>
+					<h2 class="popup__title">Внести стартовые параметры</h2>
+					<form name="edit-profile" class="popup__form">
+						<fieldset class="popup__edit-form-container">
+
+								<input name="rows" required placeholder="Количество рядов клеток" id="rows" type="text" class="popup__text-input-form" value="">
+								<input name="columns" required placeholder="Количество колонок клеток" id="columns" type="text" class="popup__text-input-form" value="">
+								<input name="blockCells" placeholder="Номера НЕ игровых клеток (через пробел)" id="block-cells" type="text" class="popup__text-input-form" value="">
+								<input name="numbPlayChar" placeholder="Количество игровых персонажей" id="numb-play-char" type="text" class="popup__text-input-form" value="">
+								<input name="numbEnemy" placeholder="Количество врагов" id="numb-enemy" type="text" class="popup__text-input-form" value="">
+								<input name="numbSpecialEnemy" placeholder="Количество особых врагов" id="numb-special-enemy" type="text" class="popup__text-input-form" value="">
+							
+							<button name="profile-save-button" type="submit" class="popup__save-button">Сохранить</button>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+
+		<div id="popup-char-info" class="popup popup__context-menu">
+			<div class="char-description">
+				<div class="char-description__title-container">
+					<h3 class="char-description__title">Описание персонажа</h3>
+					<p class="char-description__subtitle">Тип персонажа: <span class="char-description__char-type"></span></p>
+					<p class="char-description__subtitle">Класс персонажа:
+						<select class="char-description__char-class">
+						</select>
+					</p>
+					<p class="char-description__subtitle">Номер персонажа: <span class="char-description__char-numb"></span></p>
+				</div>
+				<textarea class="char-description__textarea" placevalue="Заметки о персонаже. Пиши - что хочешь."></textarea>
+			</div>
+
+			<div class="char-avatar">
+				<div class="char-avatar__img-container"><img class="char-avatar__img" src="" alt="Аватар персонажа"></div>
+			</div>
+			<div class="popup__context-menu-container">
+
+				<div class="popup__container-background popup__container-background_size_medium">
+					<div class="stats">
+						<h2 class="popup__context-menu__title">Статистика персонажа</h2>
+						<ul class="stats__list">
+
+							<li class="stats__item">
+								<div class="stats__name-container">
+									<img class="stats__img" src="./images/HP-48.png" alt="Фляска HP">
+									<p class="stats__item-name stats__item-name_health">Здоровье</p>
+								</div>
+								<input class="stats__item-value stats__item-value_health" type="number" min="0" value="">
+								<form name="decrease-health" class="stats__decrease-form">
+									<input class="stats__decrease-value stats__decrease-value_health" type="number" placeholder="Получить урон" value="">
+								</form>
+							</li>
+
+							<li class="stats__item">
+								<div class="stats__name-container">
+									<img class="stats__img" src="./images/mana-48.png" alt="Фляска MP">
+									<p class="stats__item-name stats__item-name_mana">Мана</p>
+								</div>
+								<input class="stats__item-value stats__item-value_mana" type="number" min="0" value="">
+								<form name="decrease-mana" class="stats__decrease-form">
+									<input class="stats__decrease-value stats__decrease-value_mana" type="number" placeholder="Уменьшить ману" value="">
+								</form>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="popup__container-background popup__container-background_size_small">
+					<form name="reposition-element" class="popup__context-menu-form-container popup__container-background">
+						<h2 class="popup__context-menu__title">Перемещение персонажа</h2>
+						<div class="popup__context-menu__container">
+							<input name="reposition" placeholder="Номер клетки, куда переместить пресонажа" id="reposition" type="number" class="popup__text-input-form popup__repositin-input" min="1" value="">
+							<button name="delete-elem-button" type="button" class="delete-elem-button">Удалить персонажа</button>
+						</div>
+					</form>
+				</div>
+
+			</div>
+		</div>
+
+		<script type="module" src="index.js"></script>
+	</body>
+
+</html>
